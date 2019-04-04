@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Harjoitustyo</string>
     <string name="view_weather">Current weather</string>
-    <string name="set_background">Background color</string>
+    <string name="set_background">BACKGROUND COLOR</string>
 </resources>
