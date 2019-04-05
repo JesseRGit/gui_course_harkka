@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Harjoitustyo.iml" filepath="$PROJECT_DIR$/Harjoitustyo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gui_course_harkka.iml" filepath="$PROJECT_DIR$/gui_course_harkka.iml" />
     </modules>
   </component>
 </project>

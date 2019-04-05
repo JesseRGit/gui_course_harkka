@@ -19,35 +19,68 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_backgroundColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/set_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton_blue_background"
-        android:layout_width="40sp"
+        android:layout_width="30sp"
         android:layout_height="30sp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="4dp"
         android:onClick="setBackground_blue"
         app:layout_constraintEnd_toStartOf="@+id/imageButton_red_background"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView_backgroundColor"
+        app:srcCompat="@drawable/select_background_color_circle" />
+
+    <ImageButton
+        android:id="@+id/imageButton_yellow_background"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:onClick="setBackground_yellow"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton_blue_background"
+        app:layout_constraintTop_toBottomOf="@+id/textView_backgroundColor"
+        app:srcCompat="@drawable/select_background_color_circle" />
+
+    <ImageButton
+        android:id="@+id/imageButton_green_background"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:onClick="setBackground_green"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton_yellow_background"
+        app:layout_constraintTop_toBottomOf="@+id/textView_backgroundColor"
+        app:srcCompat="@drawable/select_background_color_circle" />
+
+    <ImageButton
+        android:id="@+id/imageButton_white_background"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:onClick="setBackground_white"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton_green_background"
+        app:layout_constraintTop_toBottomOf="@+id/textView_backgroundColor"
         app:srcCompat="@drawable/select_background_color_circle" />
 
     <ImageButton
         android:id="@+id/imageButton_red_background"
-        android:layout_width="40sp"
+        android:layout_width="30sp"
         android:layout_height="30sp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="2dp"
         android:onClick="setBackground_red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView_backgroundColor"
         app:srcCompat="@drawable/select_background_color_circle" />
 
 </android.support.constraint.ConstraintLayout>
