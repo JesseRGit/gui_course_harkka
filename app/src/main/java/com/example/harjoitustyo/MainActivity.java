@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         btn_setBackground_yellow = findViewById(R.id.imageButton_yellow_background);
         btn_setBackground_white = findViewById(R.id.imageButton_white_background);
 
-
         //init background color to white
         cl_mainLayout.setBackgroundColor(Color.parseColor(currentBackgroundColor));
         btn_setBackground_white.setBackgroundColor(Color.parseColor("#A9A9A9"));
