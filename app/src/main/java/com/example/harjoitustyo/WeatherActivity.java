@@ -11,8 +11,10 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -40,27 +42,27 @@ public class WeatherActivity extends AppCompatActivity {
         //API CALL
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        //String url ="http://www.google.com";
         String url = "https://api.openweathermap.org/data/2.5/forecast?q=Tampere&appid=6c433438776b5be4ac86001dc88de74d&unites=metric";
 
-
-        // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
-                    public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        tv_weatherInfo.setText("Response is: "+ response.substring(0,500));
+                    public void onResponse(JSONObject response) {
+                        tv_weatherInfo.setText("Response: " + response);
                     }
                 }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                tv_weatherInfo.setText("No data found...");
-            }
-        });
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(),"Sorry, couldn't get data!",Toast.LENGTH_LONG).show();
+                    }
+                });
 
-        // Add the request to the RequestQueue.
-        queue.add(stringRequest);
+        queue.add( jsonObjectRequest );
+
+
+
+        // Access the RequestQueue through your singleton class.
+        //MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
     }
 
 }
