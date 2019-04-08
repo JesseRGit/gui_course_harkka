@@ -10,10 +10,8 @@ import android.widget.Toast;
 public class WeatherActivity extends AppCompatActivity {
 
     ConstraintLayout cl_weather_layout;
-    String currentBackgroundColor = "", city = "", temperature = "", description = "";
+    String currentBackgroundColor = "", city = "empty", temperature = "empty", description = "empty";
     TextView tv_cityName, tv_weatherInfo;
-
-    String fart = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +29,13 @@ public class WeatherActivity extends AppCompatActivity {
             city = bundle.getString("city");
             temperature = bundle.getString("temperature");
             description = bundle.getString("description");
-            fart = bundle.getString("fart");
-
         }
 
         //Set background to previously found color code stored in extra
         cl_weather_layout.setBackgroundColor(Color.parseColor(currentBackgroundColor));
         Toast.makeText(this, "temperature is " + temperature,Toast.LENGTH_LONG).show();
         tv_cityName.setText(city);
-        tv_weatherInfo.setText("Current temperature is " + temperature + " °C with " + description + "." + fart);
+        tv_weatherInfo.setText("Current temperature is " + temperature + " °C with " + description + ".");
     }
 }
 

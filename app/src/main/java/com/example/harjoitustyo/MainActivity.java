@@ -26,8 +26,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     public static String currentBackgroundColor = "#F5F5F5";
-    public String city = "", temperature = "", description = "";
-    public String fart = "";
+    String city = "", temperature = "", description = "";
 
     TextView tv_msg;
     TextView tv_msg2;
@@ -74,18 +73,70 @@ public class MainActivity extends AppCompatActivity {
 
         btn_search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                getData();
 
-                Intent intent = new Intent(getApplicationContext(), WeatherActivity.class);
+                // get user input
+                city = et_searchField.getText().toString();
 
-                //sent currentBackgroundColor, city, temperature and description as extra
-                intent.putExtra("current_background_color", currentBackgroundColor);
-                intent.putExtra("city", city);
-                intent.putExtra("temperature", temperature);
-                intent.putExtra("description", description);
-                intent.putExtra("fart", fart);
+                // if there's no user input use tampere
+                if (city.length() <= 0) {
+                    city = "tampere";
+                }
 
-                startActivity(intent);
+                // Instantiate the RequestQueue.
+                RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+                String url = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&APPID=6c433438776b5be4ac86001dc88de74d";
+
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                        Request.Method.GET,
+                        url,
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                // Process the JSON
+                                try {
+
+                                    String cityName = response.getString("name");
+
+                                    //JSONObject sys = response.getJSONObject("sys");
+                                    //String countryName = sys.getString("country");
+
+                                    JSONArray weatherArray = response.getJSONArray("weather");
+                                    JSONObject weatherItem = weatherArray.getJSONObject(0);
+                                    String descriptionText = weatherItem.getString("description");
+
+                                    JSONObject main = response.getJSONObject("main");
+                                    String temperatureValue = main.getString("temp");
+
+                                    city = cityName;
+                                    temperature = temperatureValue;
+                                    description = descriptionText;
+
+                                    Intent intent = new Intent(getApplicationContext(), WeatherActivity.class);
+
+                                    //sent currentBackgroundColor, city, temperature and description as extra
+                                    intent.putExtra("current_background_color", currentBackgroundColor);
+                                    intent.putExtra("city", city);
+                                    intent.putExtra("temperature", temperature);
+                                    intent.putExtra("description", description);
+                                    startActivity(intent);
+                                } catch (JSONException e) {
+                                    Toast.makeText(getApplicationContext(), "JSONException occurred", Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                // Do something when error occurred
+                                Toast.makeText(getApplicationContext(), "Error occurred", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                );
+
+                // Add JsonObjectRequest to the RequestQueue
+                queue.add(jsonObjectRequest);
             }
         });
     }
@@ -101,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
         currentBackgroundColor = "#6495ED";
     }
 
+    // function to change background color to white
     public void setBackground_white (View V) {
         cl_mainLayout.setBackgroundColor(Color.parseColor("#F5F5F5"));
         btn_setBackground_white.setBackgroundColor(Color.parseColor("#A9A9A9"));
@@ -111,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         currentBackgroundColor = "#F5F5F5";
     }
 
+    // function to change background color to yellow
     public void setBackground_yellow (View V) {
         cl_mainLayout.setBackgroundColor(Color.parseColor("#F0E68C"));
         btn_setBackground_white.setBackgroundColor(Color.parseColor("#D3D3D3"));
@@ -121,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
         currentBackgroundColor = "#F0E68C";
     }
 
+    // function to change background color to green
     public void setBackground_green (View V) {
         cl_mainLayout.setBackgroundColor(Color.parseColor("#90EE90"));
         btn_setBackground_white.setBackgroundColor(Color.parseColor("#D3D3D3"));
@@ -155,66 +209,5 @@ public class MainActivity extends AppCompatActivity {
         } else
             btn_setBackground_red.setBackgroundColor(Color.parseColor("#A9A9A9"));
         }
-
-    // function to get data from wep api
-    public void getData () {
-
-        city = et_searchField.getText().toString();
-
-        if (city.length() <= 0) {
-            city = "tampere";
-        }
-
-        // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&APPID=6c433438776b5be4ac86001dc88de74d";
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                url,
-                null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        // Process the JSON
-                        try {
-
-                            String cityName = response.getString("name");
-
-                            //JSONObject sys = response.getJSONObject("sys");
-                            //String countryName = sys.getString("country");
-
-                            JSONArray weatherArray = response.getJSONArray("weather");
-                            JSONObject weatherItem = weatherArray.getJSONObject(0);
-                            String descriptionText = weatherItem.getString("description");
-
-                            JSONObject main = response.getJSONObject("main");
-                            String temperatureValue = main.getString("temp");
-
-                            city = cityName;
-                            temperature = temperatureValue;
-                            description = descriptionText;
-                            fart = "fartaxus";
-
-                            //Toast.makeText(getApplicationContext(), temperature, Toast.LENGTH_SHORT).show();
-                            //Toast.makeText(getApplicationContext(), description, Toast.LENGTH_SHORT).show();
-
-                        } catch (JSONException e) {
-                            Toast.makeText(getApplicationContext(), "JSONException occurred", Toast.LENGTH_SHORT).show();
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // Do something when error occurred
-                        Toast.makeText(getApplicationContext(), "Error occurred", Toast.LENGTH_SHORT).show();
-                    }
-                }
-        );
-        // Add JsonObjectRequest to the RequestQueue
-        queue.add(jsonObjectRequest);
-    }
 
 }
