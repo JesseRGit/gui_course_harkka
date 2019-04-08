@@ -14,21 +14,24 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class WeatherActivity extends AppCompatActivity {
 
     ConstraintLayout cl_weather_layout;
     String currentBackgroundColor = "";
-    TextView tv_weatherInfo;
+    TextView tv_cityName, tv_weatherInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
-        cl_weather_layout=findViewById(R.id.constraintLayout_weather);
-        tv_weatherInfo=findViewById(R.id.textView_weatherInfo);
+        cl_weather_layout = findViewById(R.id.constraintLayout_weather);
+        tv_cityName = findViewById(R.id.textView_cityName);
+        tv_weatherInfo = findViewById(R.id.textView_weather);
 
         //Get intent extra
         Bundle bundle = getIntent().getExtras();
@@ -42,27 +45,52 @@ public class WeatherActivity extends AppCompatActivity {
         //API CALL
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://api.openweathermap.org/data/2.5/forecast?q=Tampere&appid=6c433438776b5be4ac86001dc88de74d&unites=metric";
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+        //String url = "https://api.openweathermap.org/data/2.5/forecast?q=Tampere&appid=6c433438776b5be4ac86001dc88de74d&unites=metric";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q=Tampere&units=metric&APPID=6c433438776b5be4ac86001dc88de74d";
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        tv_weatherInfo.setText("Response: " + response);
+                        // Process the JSON
+                        try {
+
+                            String cityName = response.getString("name");
+
+                            JSONObject sys = response.getJSONObject("sys");
+                            String countryName = sys.getString("country");
+
+                            JSONArray weatherArray = response.getJSONArray("weather");
+                            JSONObject weatherItem = weatherArray.getJSONObject(0);
+                            String description = weatherItem.getString("description");
+
+                            JSONObject main = response.getJSONObject("main");
+                            String temperature = main.getString("temp");
+
+                            tv_cityName.setText(cityName + ", " + countryName);
+                            tv_weatherInfo.setText("Current temperature is " + temperature + " °C with " + description + ".");
+
+
+                        } catch (JSONException e) {
+
+                            Toast.makeText(getApplicationContext(), "JSONException occurred", Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+
+                        }
                     }
-                }, new Response.ErrorListener() {
+                },
+                new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(),"Sorry, couldn't get data!",Toast.LENGTH_LONG).show();
+                        // Do something when error occurred
+                        Toast.makeText(getApplicationContext(), "Error occurred", Toast.LENGTH_SHORT).show();
                     }
-                });
-
-        queue.add( jsonObjectRequest );
-
-
-
-        // Access the RequestQueue through your singleton class.
-        //MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
+                }
+        );
+        // Add JsonObjectRequest to the RequestQueue
+        queue.add(jsonObjectRequest);
     }
-
 }
+
