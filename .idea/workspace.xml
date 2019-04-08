@@ -16,7 +16,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/WeatherActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/WeatherActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,14 +55,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2915" />
+          <entry key="java" value="2988" />
           <entry key="txt" value="108" />
           <entry key="xml" value="458" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2915" />
+          <entry key="JAVA" value="2988" />
           <entry key="PLAIN_TEXT" value="108" />
           <entry key="XML" value="458" />
         </counts>
@@ -75,13 +74,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="138" column="45" lean-forward="true" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
+            <state relative-caret-position="272">
+              <caret line="129" column="37" lean-forward="true" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3917#5692#0" expanded="true" />
                 <element signature="e#5691#5692#0" expanded="true" />
-                <element signature="e#5718#6105#0" expanded="true" />
                 <element signature="e#6104#6105#0" expanded="true" />
                 <element signature="method#setBackground_blue#0;class#MainActivity#0" />
                 <element signature="method#setBackground_white#0;class#MainActivity#0" />
@@ -417,13 +415,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="138" column="45" lean-forward="true" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
+        <state relative-caret-position="272">
+          <caret line="129" column="37" lean-forward="true" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3917#5692#0" expanded="true" />
             <element signature="e#5691#5692#0" expanded="true" />
-            <element signature="e#5718#6105#0" expanded="true" />
             <element signature="e#6104#6105#0" expanded="true" />
             <element signature="method#setBackground_blue#0;class#MainActivity#0" />
             <element signature="method#setBackground_white#0;class#MainActivity#0" />

@@ -131,6 +131,9 @@ public class MainActivity extends AppCompatActivity {
                             public void onErrorResponse(VolleyError error) {
                                 // Do something when error occurred
                                 Toast.makeText(getApplicationContext(), "Error occurred", Toast.LENGTH_SHORT).show();
+                                tv_msg2.setTextColor(Color.parseColor("#DC143C"));
+                                tv_msg2.setText("No city found by that name.");
+
                             }
                         }
                 );
