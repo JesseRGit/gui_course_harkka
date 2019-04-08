@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
         btn_setBackground_yellow = findViewById(R.id.imageButton_yellow_background);
         btn_setBackground_white = findViewById(R.id.imageButton_white_background);
 
-        //init background color to white
-        cl_mainLayout.setBackgroundColor(Color.parseColor(currentBackgroundColor));
-        btn_setBackground_white.setBackgroundColor(Color.parseColor("#A9A9A9"));
+        //init the right background button to be selected (at start it's white)
+        btn_setBackground_white.setBackgroundColor(Color.parseColor("#D3D3D3"));
         btn_setBackground_yellow.setBackgroundColor(Color.parseColor("#D3D3D3"));
         btn_setBackground_blue.setBackgroundColor(Color.parseColor("#D3D3D3"));
         btn_setBackground_red.setBackgroundColor(Color.parseColor("#D3D3D3"));
         btn_setBackground_green.setBackgroundColor(Color.parseColor("#D3D3D3"));
+        setRightBackgroundButtonSelected();
 
         //init setBackground buttons color
         btn_setBackground_white.setColorFilter(Color.parseColor("#F5F5F5"));
@@ -99,6 +99,20 @@ public class MainActivity extends AppCompatActivity {
         btn_setBackground_green.setBackgroundColor(Color.parseColor("#D3D3D3"));
         currentBackgroundColor = "#F08080";
     }
+
+    // function to set the right background button as selected
+    public void setRightBackgroundButtonSelected () {
+        if (currentBackgroundColor == "#F5F5F5") {
+            btn_setBackground_white.setBackgroundColor(Color.parseColor("#A9A9A9"));
+        } else if (currentBackgroundColor == "#F0E68C") {
+            btn_setBackground_yellow.setBackgroundColor(Color.parseColor("#A9A9A9"));
+        } else if (currentBackgroundColor == "#6495ED") {
+            btn_setBackground_blue.setBackgroundColor(Color.parseColor("#A9A9A9"));
+        } else if (currentBackgroundColor == "#90EE90") {
+            btn_setBackground_green.setBackgroundColor(Color.parseColor("#A9A9A9"));
+        } else
+            btn_setBackground_red.setBackgroundColor(Color.parseColor("#A9A9A9"));
+        }
 
     // intent to open WeatherActivity
     public void WeatherActivity(View view) {
