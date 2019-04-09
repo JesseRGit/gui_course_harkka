@@ -4,5 +4,5 @@
     <string name="main_msg">Type in city name to proceed.</string>
     <string name="main_msg2">Country code is optional.</string>
     <string name="view_weather">Search</string>
-    <string name="set_background">BACKGROUND COLOR</string>
+    <string name="set_background">Theme</string>
 </resources>
