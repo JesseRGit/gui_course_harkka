@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">IIC - Is it cold?</string>
-    <string name="main_subtitle">Search current weather by city.</string>
-    <string name="main_msg">Type in city name to proceed.</string>
-    <string name="main_msg2">Country code is optional.</string>
+    <string name="weather_activity">Back</string>
+    <string name="main_subtitle">Search current weather by city</string>
+    <string name="main_msg">Type in name of the city to proceed.</string>
     <string name="view_weather">Search</string>
     <string name="set_background">Theme</string>
 </resources>

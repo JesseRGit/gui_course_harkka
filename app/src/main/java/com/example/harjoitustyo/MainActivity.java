@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -29,7 +28,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String currentBackgroundColor = "#F5F5F5";
+    public static String currentBackgroundColor = "#DCDCDC";
     String city = "", country = "", temperature = "", description = "";
 
     TextView tv_msg, tv_msg2;
@@ -111,13 +110,13 @@ public class MainActivity extends AppCompatActivity {
 
     // function to change background color to white
     public void setBackground_white (View V) {
-        cl_mainLayout.setBackgroundColor(Color.parseColor("#F5F5F5"));
+        cl_mainLayout.setBackgroundColor(Color.parseColor("#DCDCDC"));
         btn_setBackground_white.setBackgroundColor(Color.parseColor("#A9A9A9"));
         btn_setBackground_yellow.setBackgroundColor(Color.parseColor("#D3D3D3"));
         btn_setBackground_blue.setBackgroundColor(Color.parseColor("#D3D3D3"));
         btn_setBackground_red.setBackgroundColor(Color.parseColor("#D3D3D3"));
         btn_setBackground_green.setBackgroundColor(Color.parseColor("#D3D3D3"));
-        currentBackgroundColor = "#F5F5F5";
+        currentBackgroundColor = "#DCDCDC";
     }
 
     // function to change background color to yellow
@@ -155,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
     // function to set the right background button as selected
     public void setRightBackgroundButtonSelected () {
-        if (currentBackgroundColor == "#F5F5F5") {
+        if (currentBackgroundColor == "#DCDCDC") {
             btn_setBackground_white.setBackgroundColor(Color.parseColor("#A9A9A9"));
         } else if (currentBackgroundColor == "#F0E68C") {
             btn_setBackground_yellow.setBackgroundColor(Color.parseColor("#A9A9A9"));

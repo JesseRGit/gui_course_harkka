@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".WeatherActivity"
-            android:label="@string/view_weather"
+            android:label="@string/weather_activity"
             android:parentActivityName=".MainActivity">
         </activity>
         <activity android:name=".MainActivity">
