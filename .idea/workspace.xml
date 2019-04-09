@@ -14,17 +14,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/select_background_color_circle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/select_background_color_circle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_course_harkka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gui_course_harkka.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +57,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3461" />
+          <entry key="java" value="3540" />
           <entry key="rounded_corner_layout" value="2" />
           <entry key="txt" value="138" />
           <entry key="xml" value="686" />
@@ -74,7 +65,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3461" />
+          <entry key="JAVA" value="3540" />
           <entry key="PLAIN_TEXT" value="138" />
           <entry key="XML" value="688" />
         </counts>
@@ -86,20 +77,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="99">
+              <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#3322#3447#0" expanded="true" />
-                <element signature="e#3446#3447#0" expanded="true" />
                 <element signature="e#3565#4065#0" expanded="true" />
                 <element signature="e#4064#4065#0" expanded="true" />
+                <element signature="method#setBackground_blue#0;class#MainActivity#0" />
+                <element signature="method#setBackground_white#0;class#MainActivity#0" />
                 <element signature="method#setBackground_yellow#0;class#MainActivity#0" />
                 <element signature="method#setBackground_green#0;class#MainActivity#0" />
                 <element signature="method#setBackground_red#0;class#MainActivity#0" />
-                <element signature="e#7984#10155#0" expanded="true" />
-                <element signature="e#10154#10155#0" expanded="true" />
-                <element signature="e#10173#10549#0" expanded="true" />
-                <element signature="e#10548#10549#0" expanded="true" />
+                <element signature="e#8856#11155#0" expanded="true" />
+                <element signature="e#11154#11155#0" expanded="true" />
+                <element signature="e#11177#11799#0" expanded="true" />
+                <element signature="e#11798#11799#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -223,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="15" />
     <option name="y" value="30" />
     <option name="width" value="1257" />
@@ -400,7 +393,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1721" height="935" extended-state="7" />
+    <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -525,20 +518,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/harjoitustyo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="99">
+          <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#3322#3447#0" expanded="true" />
-            <element signature="e#3446#3447#0" expanded="true" />
             <element signature="e#3565#4065#0" expanded="true" />
             <element signature="e#4064#4065#0" expanded="true" />
+            <element signature="method#setBackground_blue#0;class#MainActivity#0" />
+            <element signature="method#setBackground_white#0;class#MainActivity#0" />
             <element signature="method#setBackground_yellow#0;class#MainActivity#0" />
             <element signature="method#setBackground_green#0;class#MainActivity#0" />
             <element signature="method#setBackground_red#0;class#MainActivity#0" />
-            <element signature="e#7984#10155#0" expanded="true" />
-            <element signature="e#10154#10155#0" expanded="true" />
-            <element signature="e#10173#10549#0" expanded="true" />
-            <element signature="e#10548#10549#0" expanded="true" />
+            <element signature="e#8856#11155#0" expanded="true" />
+            <element signature="e#11154#11155#0" expanded="true" />
+            <element signature="e#11177#11799#0" expanded="true" />
+            <element signature="e#11798#11799#0" expanded="true" />
           </folding>
         </state>
       </provider>
